@@ -8,7 +8,7 @@ if [ -f "$SHARED_DIR/install_scripts/config" ]; then
 fi
 
 if [ ! -d fits-$FITS_VERSION ]; then
-  DOWNLOAD_URL="http://projects.iq.harvard.edu/files/fits/files/fits-${FITS_VERSION}.zip"
+  DOWNLOAD_URL="https://brussels.lib.utah.edu/FITW/-${FITS_VERSION}.zip"
   cd $DOWNLOAD_DIR
   if [ ! -f "fits.zip" ]; then
     curl $DOWNLOAD_URL -o fits.zip
@@ -19,4 +19,3 @@ if [ ! -d fits-$FITS_VERSION ]; then
   cd
   echo "PATH=\${PATH}:$FITS_PATH" >> .bashrc
 fi
-
