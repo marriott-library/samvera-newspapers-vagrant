@@ -1,3 +1,4 @@
 .vagrant
 downloads
 *~
+.DS_Store
