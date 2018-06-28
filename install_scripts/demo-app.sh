@@ -39,8 +39,6 @@ bundle exec rails default_admin_set
 bundle exec rails generate hyrax:work Image -q
 bundle exec rails generate hyrax:work Book -q
 echo "$DEMO_TASK" >> Rakefile
-#chown -R ubuntu:ubuntu /home/ubuntu/
-
 
 echo "Creating Hyku demo in ${HOME}/hyku-demo"
 cd
@@ -51,16 +49,3 @@ bundle install --quiet --path vendor/bundle
 bundle exec rake db:create
 bundle exec rake db:migrate
 echo "$DEMO_TASK" >> Rakefile
-#chown -R ubuntu:ubuntu /home/ubuntu/
-
-
-# Installing Newspaper_works Application
-#echo "Creating Newspaper Works demo in ${HOME}/newspaper_works"
-#cd
-#chown -R ubuntu:ubuntu /home/ubuntu/
-# rails new newspaper_works --skip-spring
-#git force clone https://github.com/marriott-library/newspaper_works.git newspaper_works
-#cd newspaper_works
-#bundle install --quiet --path vendor/bundle
-#chown -R ubuntu:ubuntu /home/ubuntu/
-#rake engine_cart:generate
