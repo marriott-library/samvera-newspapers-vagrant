@@ -9,10 +9,13 @@ sudo apt-get -y install $PACKAGES
 # ruby and the development libraries (so we can compile nokogiri, kgio, etc)
 sudo apt-get -y install ruby ruby-dev
 
-gem install $GEMS --no-ri --no-rdoc
+#gem install $GEMS --no-ri --no-rdoc
+#sudo gem install bundler --no-ri --no-rdoc
+#sudo gem install rails --version=5.1.4 --no-ri --no-rdoc
 
-sudo gem install bundler --no-ri --no-rdoc
-sudo gem install rails --version=5.1.4 --no-ri --no-rdoc
+# gems
+GEMS="bundler rails"
+sudo gem install $GEMS --no-ri --no-rdoc
 
 # For testing, we need phantomjs. Install it via NPM/Node
 sudo apt-get -y install npm nodejs-legacy

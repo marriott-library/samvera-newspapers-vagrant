@@ -44,5 +44,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/multitenancy.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/newspaper_works_dependencies.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fits.sh", args: shared_dir, privileged: false
-  config.vm.provision "shell", path: "./install_scripts/demo-app.sh", args: shared_dir, privileged: false
+  #config.vm.provision "shell", path: "./install_scripts/demo-app.sh", args: shared_dir, privileged: false
+  config.vm.provision "shell", path: "./install_scripts/newspaper_works.sh", args: shared_dir, privileged: false
 end
