@@ -7,4 +7,4 @@ sudo -u ubuntu git clone https://github.com/marriott-library/newspaper_works.git
 cd newspaper_works
 sudo -u ubuntu bundle install --quiet --path vendor/bundle
 sudo -u ubuntu rake engine_cart:generate
-echo "Installation of Newspaper Works App complete..."
+echo "Installation of Newspaper_Works is complete..."
