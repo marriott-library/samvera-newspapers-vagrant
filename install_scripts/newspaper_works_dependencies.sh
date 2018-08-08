@@ -3,5 +3,5 @@
 
 echo "Installing Depdencies for Newspaper_works"
 
-PACKAGES="tesseract-ocr libreoffice ghostscript poppler-utils graphicsmagick"
+PACKAGES="tesseract-ocr libreoffice ghostscript poppler-utils graphicsmagick libcurl3"
 sudo apt-get -y install $PACKAGES
