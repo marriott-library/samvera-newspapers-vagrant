@@ -1,44 +1,61 @@
 # samvera-vagrant
 
-A Vagrant environment to quickly setup current [Hyrax](http://hyr.ax/) or [Hyku](https://github.com/samvera-labs/hyku) applications.
+A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
 
 ## Requirements
 
-* [Vagrant](https://www.vagrantup.com/) version 1.8.5+
-* [VirtualBox](https://www.virtualbox.org/)
+* [Vagrant](https://www.vagrantup.com/) version 1.8.3+
+* [VirtualBox](https://www.virtualbox.org/) version 5.1.38+
 
 ## Setup
 
-1. `git clone https://github.com/samvera-labs/samvera-vagrant.git`
+1. `git clone https://github.com/marriott-library/samvera-vagrant.git`
 2. `cd samvera-vagrant`
 3. `vagrant up`
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
 
 ## Using the App
+* The Vagrant box contains Newspaper_Works application:
+  * Newspaper_Works `/home/vagrant/newspaper_works`
 
-* The Vagrant contains two demo apps:
-  * Hyrax: `/home/vagrant/hyrax-demo`
-  * Hyku: `/home/vagrant/hyku-demo`
-* Once connected to the Vagrant VM, change into the app directory and run the demo.
-  e.g., for Hyrax: `cd hyrax-demo; bundle exec rake demo`
-* Access the app at [http://localhost:3000](http://localhost:3000).
-* To setup an initial user account in Hyrax:
-  * Click "Log In" in the upper right, and then "Sign up" in the login form.
-  * Enter your username and password, and click "Sign up" to create your account and sign in.
-  * Once signed in, you can create content by clicking the "Share Your Work" button on the homepage.
-* To setup an initial user account in Hyku:
-   * Create a [superadmin user account](https://github.com/samvera-labs/hyku/wiki/Create-super-admin-user)
-   * Create a new account for a [tenant](https://github.com/samvera-labs/hyku/wiki#multi-tenancy) and tenant user account, then go to your tenant account
-   * Once signed in, you can create content by clicking the "Share Your Work" button on the homepage.
-* See the [Hyku documentation](https://wiki.duraspace.org/display/hyku/Hyku+Product+Beta+-+Frequently+Asked+Questions) for more on how to get started on Hyku
+## Using the App
+
+* The Vagrant box contains Newspaper_Works application:
+  * Newspaper_Works `/home/vagrant/newspaper_works`
+* Shell into vagrant box **three times**
+```
+	vagrant ssh
+```
+* First shell (start fcrepo_wrapper)
+```
+cd /home/ubuntu/newspaper_works
+fcrepo_wrapper --config config/fcrepo_wrapper_test.yml
+```
+* Second shell (start solr_wrapper)
+```
+cd /home/ubuntu/newspaper_works
+solr_wrapper --config config/solr_wrapper_test.yml
+```
+* Third shell testing and development
+
+* Run spec tests
+```
+cd /home/ubuntu/newspaper_works
+rake spec
+```
+* Run rails console
+```
+cd /home/ubuntu/newspaper_works
+rails s
+```
 
 ## Environment
 
-* Ubuntu 16.04 64-bit base machine
+* Ubuntu 16.04 LTS 64-bit base machine
 * [Hyrax](https://github.com/samvera-labs/hyrax) or [Hyku](https://github.com/samvera-labs/hyku): [http://localhost:3000](http://localhost:3000)
-* [Solr 6.6.0](http://lucene.apache.org/solr/): [http://localhost:8983/solr/](http://localhost:8983/solr/)
-* [Fedora 4.7.1](http://fedorarepository.org/): [http://localhost:8984/](http://localhost:8984/)
+* [Solr 7.6.0](http://lucene.apache.org/solr/): [http://localhost:8983/solr/](http://localhost:8983/solr/)
+* [Fedora 4.7.3](http://fedorarepository.org/): [http://localhost:8984/](http://localhost:8984/)
 
 ## Thanks
 
