@@ -16,39 +16,26 @@ A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
 
 ## Using the App
-* The Vagrant box contains Newspaper_Works application:
-  * Newspaper_Works `/home/vagrant/newspaper_works`
-
-## Using the App
 
 * The Vagrant box contains Newspaper_Works application:
   * Newspaper_Works `/home/vagrant/newspaper_works`
-* Shell into vagrant box **three times**
-```
-	vagrant ssh
-```
+
+* Start vagrant box provisioning: `cd samvera-vagrant && vagrant up`
+
+* Shell into vagrant box **three times** `vagrant ssh`
+
 * First shell (start fcrepo_wrapper)
-```
-cd /home/ubuntu/newspaper_works
-fcrepo_wrapper --config config/fcrepo_wrapper_test.yml
-```
+`cd /home/ubuntu/newspaper_works && fcrepo_wrapper --config config/fcrepo_wrapper_test.yml`
+
 * Second shell (start solr_wrapper)
-```
-cd /home/ubuntu/newspaper_works
-solr_wrapper --config config/solr_wrapper_test.yml
-```
+`cd /home/ubuntu/newspaper_works && solr_wrapper --config config/solr_wrapper_test.yml`
 * Third shell testing and development
 
 * Run spec tests
-```
-cd /home/ubuntu/newspaper_works
-rake spec
-```
+`cd /home/ubuntu/newspaper_works && rake spec`
+
 * Run rails console
-```
-cd /home/ubuntu/newspaper_works
-rails s
-```
+`cd /home/ubuntu/newspaper_works && rails s`
 
 ## Environment
 
