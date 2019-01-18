@@ -17,8 +17,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 ## Using the App
 
-* The Vagrant box contains Newspaper_Works application:
-  * Newspaper_Works `/home/vagrant/newspaper_works`
+* The Vagrant box contains Newspaper_Works application: `/home/vagrant/newspaper_works`
 
 * Start vagrant box provisioning: `cd samvera-vagrant && vagrant up`
 
