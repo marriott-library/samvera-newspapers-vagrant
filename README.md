@@ -2,7 +2,7 @@
 
 A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
 
-## Requirements
+## Host System Requirements (install these before proceeding)
 
 * [Vagrant](https://www.vagrantup.com/) version 1.8.3+
 * [VirtualBox](https://www.virtualbox.org/) version 5.1.38+
