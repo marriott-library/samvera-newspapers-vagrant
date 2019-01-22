@@ -18,6 +18,7 @@ if [ ! -d fits-$FITS_VERSION ]; then
   FITS_PATH="${DOWNLOAD_DIR}/fits-${FITS_VERSION}"
   cd
   echo "PATH=\${PATH}:$FITS_PATH" >> .bashrc
-  sudo ln -s /vagrant/downloads/fits-$FITS_VERSION/fits.sh /usr/bin/fits.sh
 
 fi
+
+sudo ln -s /vagrant/downloads/fits-$FITS_VERSION/fits.sh /usr/bin/fits.sh
