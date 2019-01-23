@@ -28,6 +28,11 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 `cd /home/vagrant/newspaper_works && solr_wrapper --config config/solr_wrapper_test.yml`
 * Third shell testing and development
 
+* **before running tests ensure the previous two tasks have completed and you see the following text in the shell windows**
+  * first shell `http://127.0.0.1:8986/`
+  * second shell `http://127.0.0.1:8985/solr/`
+
+
 * Run spec tests
 `cd /home/vagrant/newspaper_works && rake spec`
 
