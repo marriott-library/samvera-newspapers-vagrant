@@ -36,8 +36,11 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * Run spec tests
 `cd /home/vagrant/newspaper_works && rake spec`
 
-* Run rails console
+* Run rails server
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails s`
+
+* Run rails console
+`cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
 
 ## Environment
 
