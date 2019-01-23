@@ -7,7 +7,7 @@ A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
 * [Vagrant](https://www.vagrantup.com/) version 1.8.3+
 * [VirtualBox](https://www.virtualbox.org/) version 5.1.38+
 
-## Setup
+## Test Environment Setup (provisioning of virtual machine)
 
 1. `git clone https://github.com/marriott-library/samvera-vagrant.git`
 2. `cd samvera-vagrant`
@@ -15,11 +15,9 @@ A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
 
-## Using the App
+## Using/testing the Newspaper_works Application
 
-* The Vagrant box contains Newspaper_Works application: `/home/vagrant/newspaper_works`
-
-* Start vagrant box provisioning: `cd samvera-vagrant && vagrant up`
+* Ensure you're in the samvera-vagrant directory
 
 * Shell into vagrant box **three times** `vagrant ssh`
 
