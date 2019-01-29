@@ -24,3 +24,7 @@ apt-get -y install git vim
 
 # Wget, curl and unzip
 apt-get -y install wget curl unzip
+
+# Add BrightCove Ruby PPA
+sudo apt-add-repository ppa:brightbox/ruby-ng
+sudo apt-get update

@@ -1,44 +1,81 @@
 # samvera-vagrant
 
-A Vagrant environment to quickly setup current [Hyrax](http://hyr.ax/) or [Hyku](https://github.com/samvera-labs/hyku) applications.
+A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
 
-## Requirements
+## Host System Requirements (install these before proceeding)
 
-* [Vagrant](https://www.vagrantup.com/) version 1.8.5+
-* [VirtualBox](https://www.virtualbox.org/)
+* [Vagrant](https://www.vagrantup.com/) version 1.8.3+
+* [VirtualBox](https://www.virtualbox.org/) version 5.1.38+
 
-## Setup
+## Test Environment Setup (provisioning of virtual machine)
 
-1. `git clone https://github.com/samvera-labs/samvera-vagrant.git`
+1. `git clone https://github.com/marriott-library/samvera-vagrant.git`
 2. `cd samvera-vagrant`
 3. `vagrant up`
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
 
-## Using the App
+## Testing the Newspaper_works Application
 
-* The Vagrant contains two demo apps:
-  * Hyrax: `/home/vagrant/hyrax-demo`
-  * Hyku: `/home/vagrant/hyku-demo`
-* Once connected to the Vagrant VM, change into the app directory and run the demo.
-  e.g., for Hyrax: `cd hyrax-demo; bundle exec rake demo`
-* Access the app at [http://localhost:3000](http://localhost:3000).
-* To setup an initial user account in Hyrax:
-  * Click "Log In" in the upper right, and then "Sign up" in the login form.
-  * Enter your username and password, and click "Sign up" to create your account and sign in.
-  * Once signed in, you can create content by clicking the "Share Your Work" button on the homepage.
-* To setup an initial user account in Hyku:
-   * Create a [superadmin user account](https://github.com/samvera-labs/hyku/wiki/Create-super-admin-user)
-   * Create a new account for a [tenant](https://github.com/samvera-labs/hyku/wiki#multi-tenancy) and tenant user account, then go to your tenant account
-   * Once signed in, you can create content by clicking the "Share Your Work" button on the homepage.
-* See the [Hyku documentation](https://wiki.duraspace.org/display/hyku/Hyku+Product+Beta+-+Frequently+Asked+Questions) for more on how to get started on Hyku
+* Ensure you're in the samvera-vagrant directory
+
+* Shell into vagrant box **three times** `vagrant ssh`
+
+* First shell (start fcrepo_wrapper)
+`cd /home/vagrant/newspaper_works && fcrepo_wrapper --config config/fcrepo_wrapper_test.yml`
+
+* Second shell (start solr_wrapper)
+`cd /home/vagrant/newspaper_works && solr_wrapper --config config/solr_wrapper_test.yml`
+* Third shell testing and development
+
+* **before running tests ensure the previous two tasks have completed and you see the following text in the shell windows**
+  * first shell `http://127.0.0.1:8986/`
+  * second shell `http://127.0.0.1:8985/solr/`
+
+* Run spec tests
+`cd /home/vagrant/newspaper_works && rake spec`
+
+* Run rails console
+`cd /home/vagrant/newspaper_works/ && rails c test`
+
+## Evaluation Environment for Newspaper_works
+
+* Ensure you're in the samvera-vagrant directory
+
+* Shell into vagrant box **three times** `vagrant ssh`
+
+* First shell (start fcrepo_wrapper)
+`cd /home/vagrant/newspaper_works/.internal_test_app && fcrepo_wrapper`
+
+* Second shell (start solr_wrapper)
+`cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper`
+* Third shell testing and development
+
+* Run rails server
+`cd /home/vagrant/newspaper_works/.internal_test_app && rails s`
+
+* Run rails console
+`cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
 
 ## Environment
 
-* Ubuntu 16.04 64-bit base machine
-* [Hyrax](https://github.com/samvera-labs/hyrax) or [Hyku](https://github.com/samvera-labs/hyku): [http://localhost:3000](http://localhost:3000)
-* [Solr 6.6.0](http://lucene.apache.org/solr/): [http://localhost:8983/solr/](http://localhost:8983/solr/)
-* [Fedora 4.7.1](http://fedorarepository.org/): [http://localhost:8984/](http://localhost:8984/)
+* Ubuntu 16.04 LTS 64-bit base machine
+* [Newspaper_works](https://github.com/marriott-library/newspaper_works)
+* [Hyrax 2.3.3](https://github.com/samvera/hyrax) : http://localhost:3000
+* [Solr 7.6.0](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
+* [Fedora 4.7.3](http://fedorarepository.org/) :  [http://localhost:8984/](http://localhost:8984/)
+* [Ruby 2.5.3](https://rubyonrails.org/)
+* [Rails 5.1.6.1](https://rubyonrails.org/)
+
+## Newspaper_works Dependencies
+
+  * [FITS](https://projects.iq.harvard.edu/fits/home)
+  * [Tesseract-ocr](https://github.com/tesseract-ocr/)
+  * [LibreOffice](https://www.libreoffice.org/)
+  * [ghostscript](https://www.ghostscript.com/)
+  * [poppler-utils](https://poppler.freedesktop.org/)
+  * [GraphicsMagick](http://www.graphicsmagick.org/)
+  * [libcurl3](https://packages.ubuntu.com/search?keywords=libcurl3)
 
 ## Thanks
 
