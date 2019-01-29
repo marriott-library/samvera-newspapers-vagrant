@@ -15,7 +15,7 @@ A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
 
-## Using/testing the Newspaper_works Application
+## Testing the Newspaper_works Application
 
 * Ensure you're in the samvera-vagrant directory
 
@@ -32,9 +32,24 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
   * first shell `http://127.0.0.1:8986/`
   * second shell `http://127.0.0.1:8985/solr/`
 
-
 * Run spec tests
 `cd /home/vagrant/newspaper_works && rake spec`
+
+* Run rails console
+`cd /home/vagrant/newspaper_works/ && rails c test`
+
+## Evaluation Environment for Newspaper_works
+
+* Ensure you're in the samvera-vagrant directory
+
+* Shell into vagrant box **three times** `vagrant ssh`
+
+* First shell (start fcrepo_wrapper)
+`cd /home/vagrant/newspaper_works/.internal_test_app && fcrepo_wrapper --config config/fcrepo_wrapper_test.yml`
+
+* Second shell (start solr_wrapper)
+`cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper --config config/solr_wrapper_test.yml`
+* Third shell testing and development
 
 * Run rails server
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails s`
