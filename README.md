@@ -22,10 +22,10 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * Shell into vagrant box **three times** `vagrant ssh`
 
 * First shell (start fcrepo_wrapper)
-`cd /home/vagrant/newspaper_works && fcrepo_wrapper --config config/fcrepo_wrapper_test.yml`
+`cd /home/vagrant/newspaper_works && fcrepo_wrapper`
 
 * Second shell (start solr_wrapper)
-`cd /home/vagrant/newspaper_works && solr_wrapper --config config/solr_wrapper_test.yml`
+`cd /home/vagrant/newspaper_works && solr_wrapper`
 * Third shell testing and development
 
 * **before running tests ensure the previous two tasks have completed and you see the following text in the shell windows**
@@ -45,10 +45,10 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * Shell into vagrant box **three times** `vagrant ssh`
 
 * First shell (start fcrepo_wrapper)
-`cd /home/vagrant/newspaper_works/.internal_test_app && fcrepo_wrapper --config config/fcrepo_wrapper_test.yml`
+`cd /home/vagrant/newspaper_works/.internal_test_app && fcrepo_wrapper`
 
 * Second shell (start solr_wrapper)
-`cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper --config config/solr_wrapper_test.yml`
+`cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper`
 * Third shell testing and development
 
 * Run rails server
