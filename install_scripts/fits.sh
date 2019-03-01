@@ -13,7 +13,7 @@ if [ ! -d fits-$FITS_VERSION ]; then
   if [ ! -f "fits.zip" ]; then
     curl $DOWNLOAD_URL -o fits.zip
   fi
-  unzip fits.zip -d fits-$FITS_VERSION
+  unzip fits.zip
   chmod a+x fits-$FITS_VERSION/*.sh
   FITS_PATH="${DOWNLOAD_DIR}/fits-${FITS_VERSION}"
   cd
