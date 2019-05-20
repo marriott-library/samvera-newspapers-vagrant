@@ -61,11 +61,11 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 * Ubuntu 16.04 LTS 64-bit base machine
 * [Newspaper_works](https://github.com/marriott-library/newspaper_works)
-* [Hyrax 2.3.3](https://github.com/samvera/hyrax) : http://localhost:3000
-* [Solr 7.6.0](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
-* [Fedora 4.7.3](http://fedorarepository.org/) :  [http://localhost:8984/](http://localhost:8984/)
+* [Hyrax 2.5](https://github.com/samvera/hyrax) : http://localhost:3000
+* [Apache Solr 7.7.1](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
+* [Fedora Commons 4.7.5](http://fedorarepository.org/) :  [http://localhost:8984/](http://localhost:8984/)
 * [Ruby 2.5.3](https://rubyonrails.org/)
-* [Rails 5.1.6.1](https://rubyonrails.org/)
+* [Rails 5.1.6](https://rubyonrails.org/)
 
 ## Newspaper_works Dependencies
 
