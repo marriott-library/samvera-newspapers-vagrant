@@ -54,6 +54,9 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * Run rails server
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails s`
 
+or (in some cases the command above will not work)
+`cd /home/vagrant/newspaper_works/.internal_test_app && rails s -b 0.0.0.0`
+
 * Run rails console
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
 
@@ -61,11 +64,11 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 * Ubuntu 16.04 LTS 64-bit base machine
 * [Newspaper_works](https://github.com/marriott-library/newspaper_works)
-* [Hyrax 2.5](https://github.com/samvera/hyrax) : http://localhost:3000
+* [Hyrax 2.5.1](https://github.com/samvera/hyrax) : http://localhost:3000
 * [Apache Solr 7.7.1](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
-* [Fedora Commons 4.7.5](http://fedorarepository.org/) :  [http://localhost:8984/](http://localhost:8984/)
-* [Ruby 2.5.3](https://rubyonrails.org/)
-* [Rails 5.1.6](https://rubyonrails.org/)
+* [Fedora Commons 4.7.3](http://fedorarepository.org/) :  [http://localhost:8984/](http://localhost:8984/)
+* [Ruby 2.5.5x](https://rubyonrails.org/)
+* [Rails 5.1.7](https://rubyonrails.org/)
 
 ## Newspaper_works Dependencies
 
@@ -76,6 +79,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
   * [poppler-utils](https://poppler.freedesktop.org/)
   * [GraphicsMagick](http://www.graphicsmagick.org/)
   * [libcurl3](https://packages.ubuntu.com/search?keywords=libcurl3)
+  * [libopenjp2-tools](https://www.openjpeg.org/)
 
 ## Thanks
 

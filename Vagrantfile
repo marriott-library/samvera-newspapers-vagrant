@@ -8,7 +8,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.hostname = "samvera-newspapers"
   config.vm.box = "ubuntu/xenial64"
-  config.vm.box_version = "20190122.1.0"
 
   config.vm.network :forwarded_port, guest: 3000, host: 3000 # Rails
   config.vm.network :forwarded_port, guest: 8983, host: 8983 # Solr
@@ -44,6 +43,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/multitenancy.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/newspaper_works_dependencies.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fits.sh", args: shared_dir, privileged: false
-  #config.vm.provision "shell", path: "./install_scripts/demo-app.sh", args: shared_dir, privileged: false
   config.vm.provision "shell", path: "./install_scripts/newspaper_works.sh", args: shared_dir, privileged: false
 end
