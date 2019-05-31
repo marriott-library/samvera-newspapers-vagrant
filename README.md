@@ -54,6 +54,9 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 * Run rails server
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails s`
 
+or (in some cases the command above will not work)
+`cd /home/vagrant/newspaper_works/.internal_test_app && rails s -b 0.0.0.0`
+
 * Run rails console
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
 
