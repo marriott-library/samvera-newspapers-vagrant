@@ -10,7 +10,7 @@ sudo apt-get -y install $PACKAGES
 sudo apt-get -y install ruby2.5 ruby2.5-dev
 
 sudo gem install bundler --no-ri --no-rdoc
-sudo gem install rails -v '~> 5.1.6' --no-ri --no-rdoc
+sudo gem install rails -v '~> 5.1.7' --no-ri --no-rdoc
 
 # For testing, we need phantomjs. Install it via NPM/Node
 sudo apt-get -y install npm nodejs-legacy
