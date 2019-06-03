@@ -1,11 +1,5 @@
 #!/bin/sh
-
-# FITS
-SHARED_DIR=$1
-
-if [ -f "$SHARED_DIR/install_scripts/config" ]; then
-  . $SHARED_DIR/install_scripts/config
-fi
+FITS_VERSION=1.3.0
 
 if [ ! -d fits-$FITS_VERSION ]; then
   DOWNLOAD_URL="https://brussels.lib.utah.edu/FITS/fits-${FITS_VERSION}.zip"
@@ -19,5 +13,3 @@ if [ ! -d fits-$FITS_VERSION ]; then
   cd
   echo "PATH=\${PATH}:$FITS_PATH" >> .bashrc
 fi
-
-sudo ln -s /vagrant/downloads/fits-$FITS_VERSION/fits.sh /usr/bin/fits.sh
