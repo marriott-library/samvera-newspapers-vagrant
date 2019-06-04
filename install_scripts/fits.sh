@@ -13,12 +13,11 @@ if [ ! -d fits-$FITS_VERSION ]; then
   if [ ! -f "fits.zip" ]; then
     curl $DOWNLOAD_URL -o fits.zip
   fi
-  unzip fits.zip
+  unzip fits.zip -d fits-$FITS_VERSION
   chmod a+x fits-$FITS_VERSION/*.sh
   FITS_PATH="${DOWNLOAD_DIR}/fits-${FITS_VERSION}"
   cd
   echo "PATH=\${PATH}:$FITS_PATH" >> .bashrc
-
 fi
 
 sudo ln -s /vagrant/downloads/fits-$FITS_VERSION/fits.sh /usr/bin/fits.sh
