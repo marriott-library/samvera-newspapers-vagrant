@@ -7,7 +7,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   config.vm.hostname = "samvera-newspapers"
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "ubuntu/bionic64"
 
   config.vm.network :forwarded_port, guest: 3000, host: 3000 # Rails
   config.vm.network :forwarded_port, guest: 8983, host: 8983 # Solr
@@ -39,8 +39,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/bootstrap.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/java.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/ruby.sh", args: shared_dir
-  config.vm.provision "shell", path: "./install_scripts/postgres.sh", args: shared_dir
-  config.vm.provision "shell", path: "./install_scripts/multitenancy.sh", args: shared_dir
+  #config.vm.provision "shell", path: "./install_scripts/postgres.sh", args: shared_dir
+  #config.vm.provision "shell", path: "./install_scripts/multitenancy.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/newspaper_works_dependencies.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/fits.sh", args: shared_dir, privileged: false
   config.vm.provision "shell", path: "./install_scripts/newspaper_works.sh", args: shared_dir, privileged: false
