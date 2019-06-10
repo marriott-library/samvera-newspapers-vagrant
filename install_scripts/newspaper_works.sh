@@ -15,6 +15,9 @@ sed -i 's/# config.work_requires_files = true/config.work_requires_files = false
 # NewspaperWorks expects that your application's config/initializers/hyrax.rb be edited to enable a IIIF viewer
 sed -i 's/# config.iiif_image_server = false/config.iiif_image_server = true/' config/initializers/hyrax.rb
 
+# Uncomment the devise secret key from the devise initialzier
+sed -i 's/# config.secret_key/config.secret_key/' config/initializers/devise.rb
+
 # Output Messages
 echo "Installation of Newspaper_Works application is complete..."
 echo "There are two more steps that need to completed after the script completes"
