@@ -9,15 +9,15 @@ A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
 
 ## Test Environment Setup (provisioning of virtual machine)
 
-1. `git clone https://github.com/marriott-library/samvera-vagrant.git`
-2. `cd samvera-vagrant`
+1. `git clone https://github.com/marriott-library/samvera-newspapers-vagrant`
+2. `cd samvera-newspapers-vagrant`
 3. `vagrant up`
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
 
 ## Testing the Newspaper_works Application
 
-* Ensure you're in the samvera-vagrant directory
+* Ensure you're in the samvera-newspapers-vagrant directory
 
 * Shell into vagrant box **three times** `vagrant ssh`
 
@@ -40,7 +40,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 ## Evaluation Environment for Newspaper_works
 
-* Ensure you're in the samvera-vagrant directory
+* Ensure you're in the samvera-newspapers-vagrant directory
 
 * Shell into vagrant box **three times** `vagrant ssh`
 
@@ -65,9 +65,9 @@ or (in some cases the command above will not work)
 * Ubuntu 16.04 LTS 64-bit base machine
 * [Newspaper_works](https://github.com/marriott-library/newspaper_works)
 * [Hyrax 2.5.1](https://github.com/samvera/hyrax) : http://localhost:3000
-* [Apache Solr 7.7.1](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
+* [Apache Solr 7.7.2](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
 * [Fedora Commons 4.7.3](http://fedorarepository.org/) :  [http://localhost:8984/](http://localhost:8984/)
-* [Ruby 2.5.5x](https://rubyonrails.org/)
+* [Ruby 2.5.5](https://rubyonrails.org/)
 * [Rails 5.1.7](https://rubyonrails.org/)
 
 ## Newspaper_works Dependencies
