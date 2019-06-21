@@ -49,7 +49,14 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 * Second shell (start solr_wrapper)
 `cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper`
+
 * Third shell testing and development
+
+  * Lastly, a default admin set and workflow need to be created.
+  1. Generate default admin set:
+`cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:default_admin_set:create`
+  2. Generate default workflow:
+`cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:workflow:load`
 
 * Run rails server
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails s`
