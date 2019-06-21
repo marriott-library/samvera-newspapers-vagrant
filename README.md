@@ -1,4 +1,4 @@
-# samvera-vagrant
+# samvera-newspapers-vagrant
 
 A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
 
