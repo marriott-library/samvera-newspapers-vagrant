@@ -1,11 +1,12 @@
 # samvera-newspapers-vagrant
 
-A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
+A Vagrant environment to quickly setup Newspaper_Works [Hyrax](https://hyrax.samvera.org/)
 
 ## Host System Requirements (install these before proceeding)
 
 * [Vagrant](https://www.vagrantup.com/) version 1.8.3+
 * [VirtualBox](https://www.virtualbox.org/) version 5.1.38+
+* [vagrant-disksize](https://github.com/sprotheroe/vagrant-disksize)
 
 ## Test Environment Setup (provisioning of virtual machine)
 
@@ -49,13 +50,17 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 * Second shell (start solr_wrapper)
 `cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper`
-* Third shell testing and development
 
-* Run rails server
-`cd /home/vagrant/newspaper_works/.internal_test_app && rails s`
+* Third create workflows and admin sets
 
-or (in some cases the command above will not work)
+`cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:default_admin_set:create`
+and
+`cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:workflow:load`
+
+* Fourth run rails web server
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails s -b 0.0.0.0`
+
+## Optional
 
 * Run rails console
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
@@ -73,8 +78,8 @@ or (in some cases the command above will not work)
 ## Newspaper_works Dependencies
 
   * [FITS](https://projects.iq.harvard.edu/fits/home)
-  * [Tesseract-ocr](https://github.com/tesseract-ocr/)
-  * [LibreOffice](https://www.libreoffice.org/)
+  * [tesseract-ocr](https://github.com/tesseract-ocr/)
+  * [libreoffice](https://www.libreoffice.org/)
   * [ghostscript](https://www.ghostscript.com/)
   * [poppler-utils](https://poppler.freedesktop.org/)
   * [GraphicsMagick](http://www.graphicsmagick.org/)
