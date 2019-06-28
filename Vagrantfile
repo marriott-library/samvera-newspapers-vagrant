@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.hostname = "samvera-newspapers"
   config.vm.box = "ubuntu/xenial64"
+  # config.disksize.size = "15GB"
 
   config.vm.network :forwarded_port, guest: 3000, host: 3000 # Rails
   config.vm.network :forwarded_port, guest: 8983, host: 8983 # Solr
