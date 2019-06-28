@@ -6,7 +6,7 @@ A Vagrant environment to quickly setup Newspaper_Works [Hyrax](https://hyrax.sam
 
 * [Vagrant](https://www.vagrantup.com/) version 1.8.3+
 * [VirtualBox](https://www.virtualbox.org/) version 5.1.38+
-* [vagrant-disksize](https://github.com/sprotheroe/vagrant-disksize)
+* [vagrant-disksize](https://github.com/sprotheroe/vagrant-disksize) (optional)
 
 ## Test Environment Setup (provisioning of virtual machine)
 
@@ -15,6 +15,8 @@ A Vagrant environment to quickly setup Newspaper_Works [Hyrax](https://hyrax.sam
 3. `vagrant up`
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
+
+* The default disk for the Vagrant VM is 10gb. If you need more disk space, modify the vagrant file and uncomment line 11 ` #config.disksize.size = "15GB"` and set the preferred disk size. Then go back to step 3.
 
 ## Testing the Newspaper_works Application
 
@@ -60,7 +62,7 @@ and
 * Fourth run rails web server
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails s -b 0.0.0.0`
 
-## Optional
+### Optional
 
 * Run rails console
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
