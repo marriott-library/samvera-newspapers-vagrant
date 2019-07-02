@@ -87,6 +87,7 @@ and
   * [GraphicsMagick](http://www.graphicsmagick.org/)
   * [libcurl3](https://packages.ubuntu.com/search?keywords=libcurl3)
   * [libopenjp2-tools](https://www.openjpeg.org/)
+  * [Google Chrome](https://www.google.com/chrome/) (running tests)
 
 ## Thanks
 
