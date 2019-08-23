@@ -25,7 +25,7 @@ apt-get -y install git vim
 # Wget, curl, unzip, & htop
 apt-get -y install wget curl unzip htop
 
-# Add BrightCove Ruby PPA for Ubutu 16.04 LTS
+# Add BrightCove Ruby PPA for Ubuntu 16.04 LTS
 sudo apt-add-repository ppa:brightbox/ruby-ng
 sudo apt-get update
 
