@@ -17,6 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 5120
+    #v.cpus = 4
+    #v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
   end
 
   # Check our system locale -- make sure it is set to UTF-8
