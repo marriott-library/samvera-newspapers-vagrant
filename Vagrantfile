@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.hostname = "samvera-newspapers"
   config.vm.box = "ubuntu/xenial64"
-  # config.disksize.size = "15GB"
+  #config.disksize.size = "15GB"
 
   config.vm.network :forwarded_port, guest: 3000, host: 3000 # Rails
   config.vm.network :forwarded_port, guest: 8983, host: 8983 # Solr
@@ -17,8 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 5120
-    #v.cpus = 4
-    #v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
+    v.cpus = 4
+    v.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
   end
 
   # Check our system locale -- make sure it is set to UTF-8
