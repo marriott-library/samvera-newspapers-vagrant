@@ -22,10 +22,10 @@ apt-get -y install build-essential
 # Git vim
 apt-get -y install git vim
 
-# Wget, curl and unzip
-apt-get -y install wget curl unzip
+# Wget, curl, unzip, & htop
+apt-get -y install wget curl unzip htop
 
-# Add BrightCove Ruby PPA
+# Add BrightCove Ruby PPA for Ubuntu 16.04 LTS
 sudo apt-add-repository ppa:brightbox/ruby-ng
 sudo apt-get update
 
