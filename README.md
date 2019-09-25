@@ -1,23 +1,26 @@
-# samvera-vagrant
+# samvera-newspapers-vagrant
 
-A Vagrant environment to quickly setup Newspaper_Works [Hyrax](http://hyr.ax/)
+A Vagrant environment to quickly setup Newspaper_Works [Hyrax](https://hyrax.samvera.org/)
 
 ## Host System Requirements (install these before proceeding)
 
 * [Vagrant](https://www.vagrantup.com/) version 1.8.3+
 * [VirtualBox](https://www.virtualbox.org/) version 5.1.38+
+* [vagrant-disksize](https://github.com/sprotheroe/vagrant-disksize) (optional)
 
 ## Test Environment Setup (provisioning of virtual machine)
 
-1. `git clone https://github.com/marriott-library/samvera-vagrant.git`
-2. `cd samvera-vagrant`
+1. `git clone https://github.com/marriott-library/samvera-newspapers-vagrant`
+2. `cd samvera-newspapers-vagrant`
 3. `vagrant up`
 
 You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localhost`
 
+* The default disk for the Vagrant VM is 10gb. If you need more disk space, modify the vagrant file and uncomment line 11 ` #config.disksize.size = "15GB"` and set the preferred disk size. Then go back to step 3.
+
 ## Testing the Newspaper_works Application
 
-* Ensure you're in the samvera-vagrant directory
+* Ensure you're in the samvera-newspapers-vagrant directory
 
 * Shell into vagrant box **three times** `vagrant ssh`
 
@@ -40,7 +43,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 ## Evaluation Environment for Newspaper_works
 
-* Ensure you're in the samvera-vagrant directory
+* Ensure you're in the samvera-newspapers-vagrant directory
 
 * Shell into vagrant box **three times** `vagrant ssh`
 
@@ -49,13 +52,17 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 * Second shell (start solr_wrapper)
 `cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper`
-* Third shell testing and development
 
-* Run rails server
-`cd /home/vagrant/newspaper_works/.internal_test_app && rails s`
+* Third create workflows and admin sets
 
-or (in some cases the command above will not work)
+`cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:default_admin_set:create`
+and
+`cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:workflow:load`
+
+* Fourth run rails web server
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails s -b 0.0.0.0`
+
+### Optional
 
 * Run rails console
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
@@ -65,21 +72,22 @@ or (in some cases the command above will not work)
 * Ubuntu 16.04 LTS 64-bit base machine
 * [Newspaper_works](https://github.com/marriott-library/newspaper_works)
 * [Hyrax 2.5.1](https://github.com/samvera/hyrax) : http://localhost:3000
-* [Apache Solr 7.7.1](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
+* [Apache Solr 7.7.2](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
 * [Fedora Commons 4.7.3](http://fedorarepository.org/) :  [http://localhost:8984/](http://localhost:8984/)
-* [Ruby 2.5.5x](https://rubyonrails.org/)
+* [Ruby 2.5.5](https://rubyonrails.org/)
 * [Rails 5.1.7](https://rubyonrails.org/)
 
 ## Newspaper_works Dependencies
 
   * [FITS](https://projects.iq.harvard.edu/fits/home)
-  * [Tesseract-ocr](https://github.com/tesseract-ocr/)
-  * [LibreOffice](https://www.libreoffice.org/)
+  * [tesseract-ocr](https://github.com/tesseract-ocr/)
+  * [libreoffice](https://www.libreoffice.org/)
   * [ghostscript](https://www.ghostscript.com/)
   * [poppler-utils](https://poppler.freedesktop.org/)
   * [GraphicsMagick](http://www.graphicsmagick.org/)
   * [libcurl3](https://packages.ubuntu.com/search?keywords=libcurl3)
   * [libopenjp2-tools](https://www.openjpeg.org/)
+  * [Google Chrome](https://www.google.com/chrome/) (running tests)
 
 ## Thanks
 
