@@ -3,3 +3,6 @@ downloads
 *~
 .DS_Store
 ubuntu-*-console.log
+
+# newspaper_works/ dir created by Vagrant as synced folder:
+newspaper_works
