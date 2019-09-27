@@ -39,7 +39,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   shared_dir = "/vagrant"
 
-  config.vm.synced_folder "./newspaper_works", "/home/vagrant/newspaper_works", create: true
+  # ----
+  # **NOTE TO DEVELOPERS**: you likely want to uncomment this setting below,
+  #   but do so before provisioning this box for the first time,
+  #   by uncommenting the below setting.  Using a synced folder means that
+  #   you are mounting a host directory to your guest, and that the git checkout
+  #   of newspaper_works done by provisioning of this guest is performed into
+  #   this shared storage, easy for editing.
+  # ----
+  # config.vm.synced_folder "./newspaper_works", "/home/vagrant/newspaper_works", create: true
 
   config.vm.provision "shell", path: "./install_scripts/bootstrap.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/java.sh", args: shared_dir

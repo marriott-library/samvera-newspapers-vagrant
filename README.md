@@ -64,6 +64,11 @@ and
 
 ### Optional
 
+* *Developers, before you bring up this box for the first time:*
+  consider whether you want to edit files from tools on your host machine.
+  If so, opt-in to enable a synced folder in [`Vagrantfile`](Vagrantfile#L50)
+  by uncommenting the `config.vm.synced_folder` setting.
+
 * Run rails console
 `cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
 
