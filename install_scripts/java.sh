@@ -8,8 +8,7 @@ if which java >/dev/null; then
 else
   # install distro default
   echo "java installation"
-  apt-get install --yes default-jdk
-  # ...but make JDK 8 default java executable (for Fedora, Solr, etc)
+  # install and make JDK 8 default java executable (for Fedora, Solr, etc)
   apt-get install openjdk-8-jre-headless
   update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 fi
