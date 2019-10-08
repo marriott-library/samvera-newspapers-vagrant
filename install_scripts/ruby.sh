@@ -17,4 +17,4 @@ sudo apt-get -y install npm nodejs
 sudo npm install -g phantomjs-prebuilt
 
 # Patch ImageMagic policy.xml
-#sudo wget -q -O /etc/ImageMagick-6/policy.xml https://raw.githubusercontent.com/marriott-library/newspaper_works/7052ff3bf58022572870a0720d8c5a705090a833/config/vendor/imagemagick-6-policy.xml
+sudo wget -q -O /etc/ImageMagick-6/policy.xml https://raw.githubusercontent.com/marriott-library/newspaper_works/b74ef957892aab9a4b8cf4196a851db9cf810350/config/vendor/imagemagick-6-policy.xml
