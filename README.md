@@ -20,51 +20,55 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 ## Testing the Newspaper_works Application
 
-*   Ensure you're in the samvera-newspapers-vagrant directory
+1.  Ensure you're in the samvera-newspapers-vagrant directory
 
-*   Shell into the vagrant box **three times** using `vagrant ssh`
+2.  Shell into the vagrant box **three times** using `vagrant ssh`
 
-*   First shell (start fcrepo_wrapper)
-`cd /home/vagrant/newspaper_works && fcrepo_wrapper --config config/fcrepo_wrapper_test.yml`
+3.  Using the first shell start fcrepo_wrapper
 
-*   Second shell (start solr_wrapper)
-`cd /home/vagrant/newspaper_works && solr_wrapper --config config/solr_wrapper_test.yml`
+    `cd /home/vagrant/newspaper_works && fcrepo_wrapper --config config/fcrepo_wrapper_test.yml`
 
-*   Third shell testing and development
+4.  Using the second shell start solr_wrapper
 
-*   **before running tests ensure the previous two tasks have completed and you see the following text in the shell windows**
-    *   first shell `http://127.0.0.1:8986/`
-    *   second shell `http://127.0.0.1:8985/solr/`
+    `cd /home/vagrant/newspaper_works && solr_wrapper --config config/solr_wrapper_test.yml`
 
-*   Run spec tests
-`cd /home/vagrant/newspaper_works && rake spec`
+5.  Use the third shell for testing and development
 
-*   Run rails console
-`cd /home/vagrant/newspaper_works/ && rails c test`
+    *   **before running tests ensure the previous two tasks have completed and you see the following text in the shell windows**
+        *   first shell `http://127.0.0.1:8986/`
+        *   second shell `http://127.0.0.1:8985/solr/`
+
+6.  Using the third shell you can run spec tests
+
+    `cd /home/vagrant/newspaper_works && rake spec`
+
+7.  Using the third shell you can run rails console
+
+    `cd /home/vagrant/newspaper_works/ && rails c test`
 
 ## Evaluation Environment for Newspaper_works
 
-*   Ensure you're in the samvera-newspapers-vagrant directory
+1.  Ensure you're in the samvera-newspapers-vagrant directory
 
-*   Shell into vagrant box **three times** `vagrant ssh`
+2.  Shell into vagrant box **three times** `vagrant ssh`
 
-*   First shell (start fcrepo_wrapper)
+3.  Using the first shell start fcrepo_wrapper
 
     `cd /home/vagrant/newspaper_works/.internal_test_app && fcrepo_wrapper`
 
-*   Second shell (start solr_wrapper)
+4.  Using the second shell start solr_wrapper
 
      `cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper`
 
-*   Third shell create workflows and admin sets
+5.  Using the third shell create the default admin set
 
     `cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:default_admin_set:create`
 
-    then run
+6.  Using the third shell create workflows
 
     `cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:workflow:load`
 
-*   Fourth run rails web server
+7.  Using the third shell run the rails web server
 
     `cd /home/vagrant/newspaper_works/.internal_test_app && rails s -b 0.0.0.0`
 
