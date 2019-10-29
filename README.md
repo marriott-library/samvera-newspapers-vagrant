@@ -22,18 +22,19 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 
 *   Ensure you're in the samvera-newspapers-vagrant directory
 
-*   Shell into vagrant box **three times** `vagrant ssh`
+*   Shell into the vagrant box **three times** using `vagrant ssh`
 
 *   First shell (start fcrepo_wrapper)
 `cd /home/vagrant/newspaper_works && fcrepo_wrapper --config config/fcrepo_wrapper_test.yml`
 
 *   Second shell (start solr_wrapper)
 `cd /home/vagrant/newspaper_works && solr_wrapper --config config/solr_wrapper_test.yml`
+
 *   Third shell testing and development
 
 *   **before running tests ensure the previous two tasks have completed and you see the following text in the shell windows**
-*   first shell `http://127.0.0.1:8986/`
-*   second shell `http://127.0.0.1:8985/solr/`
+    *   first shell `http://127.0.0.1:8986/`
+    *   second shell `http://127.0.0.1:8985/solr/`
 
 *   Run spec tests
 `cd /home/vagrant/newspaper_works && rake spec`
@@ -48,19 +49,24 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 *   Shell into vagrant box **three times** `vagrant ssh`
 
 *   First shell (start fcrepo_wrapper)
-`cd /home/vagrant/newspaper_works/.internal_test_app && fcrepo_wrapper`
+
+    `cd /home/vagrant/newspaper_works/.internal_test_app && fcrepo_wrapper`
 
 *   Second shell (start solr_wrapper)
-`cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper`
 
-*   Third create workflows and admin sets
+     `cd /home/vagrant/newspaper_works/.internal_test_app && solr_wrapper`
 
-`cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:default_admin_set:create`
-and
-`cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:workflow:load`
+*   Third shell create workflows and admin sets
+
+    `cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:default_admin_set:create`
+
+    then run
+
+    `cd /home/vagrant/newspaper_works/.internal_test_app/ && bin/rails hyrax:workflow:load`
 
 *   Fourth run rails web server
-`cd /home/vagrant/newspaper_works/.internal_test_app && rails s -b 0.0.0.0`
+
+    `cd /home/vagrant/newspaper_works/.internal_test_app && rails s -b 0.0.0.0`
 
 ### Optional
 
@@ -70,12 +76,13 @@ and
   by uncommenting the `config.vm.synced_folder` setting.
 
 *   Run rails console
-`cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
+
+    `cd /home/vagrant/newspaper_works/.internal_test_app && rails c`
 
 ## Environment
 
 *   [Ubuntu 18.04 LTS 64-bit](http://releases.ubuntu.com/18.04/)
-*   [Newspaper_works](https://github.com/marriott-library/newspaper_works)
+*   [Newspaper_works 1.0](https://github.com/marriott-library/newspaper_works)
 *   [Hyrax 2.6.0](https://github.com/samvera/hyrax) : [http://localhost:3000](http://localhost:3000)
 *   [Apache Solr 7.7.2](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
 *   [Fedora Commons 4.7.3](http://fedorarepository.org/) :  [http://localhost:8984/](http://localhost:8984/)
