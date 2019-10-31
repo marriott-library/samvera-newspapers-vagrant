@@ -86,7 +86,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 ## Environment
 
 *   [Ubuntu 18.04 LTS 64-bit](http://releases.ubuntu.com/18.04/)
-*   [Newspaper_works 1.0](https://github.com/marriott-library/newspaper_works)
+*   [Newspaper_works 1.0.1](https://github.com/marriott-library/newspaper_works)
 *   [Hyrax 2.6.0](https://github.com/samvera/hyrax) : [http://localhost:3000](http://localhost:3000)
 *   [Apache Solr 7.7.2](http://lucene.apache.org/solr/) :  [http://localhost:8983/solr/](http://localhost:8983/solr/)
 *   [Fedora Commons 4.7.3](http://fedorarepository.org/) :  [http://localhost:8984/](http://localhost:8984/)
