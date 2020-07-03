@@ -3,7 +3,7 @@ HOME="/home/vagrant"
 
 echo "Creating Newspaper Works in ${HOME}/newspaper_works"
 cd ${HOME}
-sudo -u vagrant git clone https://github.com/marriott-library/newspaper_works.git newspaper_works
+sudo -u vagrant git clone https://github.com/samvera-labs/newspaper_works.git newspaper_works
 cd newspaper_works
 sudo -u vagrant bundle install --path vendor/bundle # --quiet --path vendor/bundle
 sudo -u vagrant bundle exec rake engine_cart:generate
