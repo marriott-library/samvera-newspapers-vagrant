@@ -11,7 +11,7 @@ if [ ! -d fits-$FITS_VERSION ]; then
   DOWNLOAD_URL="https://brussels.lib.utah.edu/FITS/fits-${FITS_VERSION}.zip"
   cd $DOWNLOAD_DIR
   if [ ! -f "fits.zip" ]; then
-    curl $DOWNLOAD_URL -o fits.zip
+    wget $DOWNLOAD_URL -o fits.zip
   fi
   unzip fits.zip -d fits-$FITS_VERSION
   chmod a+x fits-$FITS_VERSION/*.sh
@@ -21,3 +21,6 @@ if [ ! -d fits-$FITS_VERSION ]; then
 fi
 
 sudo ln -s /vagrant/downloads/fits-$FITS_VERSION/fits.sh /usr/bin/fits.sh
+
+
+#https://brussels.lib.utah.edu/FITS/fits-1.4.1.zip
