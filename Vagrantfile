@@ -48,13 +48,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   this shared storage, easy for editing.
   # ----
   # config.vm.synced_folder "./newspaper_works", "/home/vagrant/newspaper_works", create: true
-
   config.vm.provision "shell", path: "./install_scripts/bootstrap.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/fits.sh", args: shared_dir, privileged: false
   config.vm.provision "shell", path: "./install_scripts/java.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/ruby.sh", args: shared_dir
   #config.vm.provision "shell", path: "./install_scripts/postgres.sh", args: shared_dir
   #config.vm.provision "shell", path: "./install_scripts/multitenancy.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/newspaper_works_dependencies.sh", args: shared_dir
-  config.vm.provision "shell", path: "./install_scripts/fits.sh", args: shared_dir, privileged: false
   config.vm.provision "shell", path: "./install_scripts/newspaper_works.sh", args: shared_dir, privileged: false
 end
