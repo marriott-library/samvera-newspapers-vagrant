@@ -10,20 +10,20 @@ fi
 
 cd
 
-# Update
+# Update ubuntu VM
 apt-get -y update && apt-get -y upgrade
 
-# SSH
+# SSH server
 apt-get -y install openssh-server
 
 # Build tools
 apt-get -y install build-essential
 
-# Git vim
+# Git & vim
 apt-get -y install git vim
 
-# Wget, curl, unzip, & htop
-apt-get -y install wget curl unzip htop
+# Wget, curl, unzip, htop, & libgbm1
+apt-get -y install wget curl unzip htop libgbm1
 
 # Install Google Chrome
 sudo apt-get install -y libappindicator3-1 fonts-liberation libasound2 libnspr4 libnss3 libxss1 xdg-utils libatk-bridge2.0 libgtk-3-0

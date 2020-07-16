@@ -102,6 +102,7 @@ You can shell into the machine with `vagrant ssh` or `ssh -p 2222 vagrant@localh
 *   [poppler-utils](https://poppler.freedesktop.org/)
 *   [libcurl3](https://packages.ubuntu.com/search?keywords=libcurl3)
 *   [libopenjp2-tools](https://www.openjpeg.org/)
+*   [libgbm1](https://packages.debian.org/sid/libgbm1)
 *   [Google Chrome](https://www.google.com/chrome/) (running tests)
 
 ## Thanks
